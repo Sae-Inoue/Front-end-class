@@ -3,39 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact</title>
+    <link rel="stylesheet"  href="style.css">
 </head>
 <body>
     <header>
-        <h1>Sae Inoue</h1>
+        <h1 id="headName">Sae Inoue</h1>
         <a href="Resume.html">Resume</a>
     </header>
 
     <main>
+        <h2 id="contact">Contact form</h2>
         <form>
-            <label for="fname">First Name</label>
-            <input type="text" id="fname">
-            <br>
-            <br>
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname">
-            <br>
-            <br>
-            <label for="email">Email</label>
-            <input id="email" type="email">
-            <br>
-            <br>
-            <label for="message" type="text">Message</label>
-            <textarea id="message"></textarea>
-
-
-
-
+            <div>
+                <section>
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname">
+                </section>
+                <section>
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname">
+                </section>
+                <section>
+                    <label for="email">Email</label>
+                    <input id="email" type="email">
+                </section>
+                <section>
+                    <label for="message" type="text">Message</label>
+                    <textarea id="message" rows="10" cols="30"></textarea>
+                </section>
+            </div>
+            <button type="submit">Submit</button>
         </form>
     </main>
 
     <footer>
 
     </footer>
-<script src="style.css"></script>
+
 </body>
 </html>

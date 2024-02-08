@@ -1,0 +1,73 @@
+#headName{
+    background-color: aliceblue;
+    font-style: inherit;
+    font-size: xxx-large;
+    text-align: center;
+    border-bottom: solid;
+}
+
+a{
+    font-size: x-large;
+}
+
+
+
+header{
+    padding: 30px;
+}
+
+body{
+    background-color: lightblue;
+}
+
+
+
+article{
+    border: solid;
+    border-color: dimgray;
+    background-color: aliceblue;
+    text-align: center;
+}
+
+
+section{
+    padding:10px;
+
+}
+
+button{
+    padding:10px;
+    font-size: 30px;
+    margin-left: 160px;
+
+}
+
+div{
+    margin:20px;
+}
+
+input{
+    margin:10px;
+}
+
+#email{
+    padding-left: 30px;
+    margin-left: 40px;
+}
+
+#message{
+    margin-left: 25px;
+}
+
+label{
+    font-size: 20px;
+
+}
+
+#contact{
+    margin:10px;
+    font-size: 30px;
+}
+
+
+
