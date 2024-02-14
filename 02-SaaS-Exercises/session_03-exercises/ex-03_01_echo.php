@@ -109,5 +109,10 @@ echo "</tr>";
 echo "</thead>";
 echo "</table>";
 echo "<tbody>";
+echo "<tr>";
+echo "<td>James</td>";
+echo "<td>$1000</td>";
+echo "</tr>";
 echo "</tbody>";
+
 ?>
