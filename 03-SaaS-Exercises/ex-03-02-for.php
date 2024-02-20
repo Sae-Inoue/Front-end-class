@@ -1,6 +1,6 @@
 <?php
 /**
- * echo exercise
+ * Title of the exercise
  *
  * Short explanation of the task
  *
@@ -8,24 +8,6 @@
  * Version:   1.0
  * Completed: 2024-02-20
  */
-
-
-echo "<table>";
-echo "<thead>";
-echo "<tr>";
-echo "<th>Person</th>";
-echo "<th>Salary</th>";
-echo "</tr>";
-echo "</thead>";
-echo "</table>";
-echo "<tbody>";
-echo "<tr>";
-echo "<td>James</td>";
-echo "<td>$1000</td>";
-echo "</tr>";
-echo "</tbody>";
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
