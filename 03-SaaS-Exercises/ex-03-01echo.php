@@ -2,11 +2,29 @@
 /**
  * echo exercise
  *
- * Show a table of salaries using echo and the table
- * Author:    Sae Inoue <Student Email>20103543@tafe.wa.edu.au
+ * Short explanation of the task
+ *
+ * Author:    Sae Inoue <20103543@tafe.wa.eud.au>
  * Version:   1.0
- * Completed: 2024-02-14
+ * Completed: 2024-02-20
  */
+
+
+echo "<table>";
+echo "<thead>";
+echo "<tr>";
+echo "<th>Person</th>";
+echo "<th>Salary</th>";
+echo "</tr>";
+echo "</thead>";
+echo "</table>";
+echo "<tbody>";
+echo "<tr>";
+echo "<td>James</td>";
+echo "<td>$1000</td>";
+echo "</tr>";
+echo "</tbody>";
+
 
 ?>
 <!DOCTYPE html>
@@ -16,14 +34,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Use SCRIPT as we are using the Tailwind CDN for now -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Session 02 Exercises</title>
+    <title>Session 03 Exercises</title>
 </head>
 
 <body class="bg-gray-100 flex flex-col min-h-screen">
 <header class="bg-amber-950 text-pink-400 p-4">
     <div class="container mx-auto flex flex-row gap-8">
-        <h1 class="text-3xl font-semibold grow">Sae Inoue</h1>
-        <p class="text-3xl font-semibold">Session 02, Exercise 01</p>
+        <h1 class="text-3xl font-semibold grow">YOUR NAME GOES HERE</h1>
+        <p class="text-3xl font-semibold">Session 03, Exercise XX</p>
     </div>
 </header>
 <main class="container mx-auto p-4 mt-6 flex flex-col gap-12 ">
@@ -90,7 +108,7 @@
             <p class="text-sm">
                 Before using any content on this page, and any associated pages, files or other materials, must be
                 sought from the author. Once permission is provided to use said content, a notice must be appended to
-                your page stating "Used with permission from <strong>Sae Inoue</strong>. Original located at <a
+                your page stating "Used with permission from <strong>MY NAME HERE</strong>. Original located at <a
                         href="#HTTP_LINK_TO_SOURCE">HTTP_LINK_TO_SOURCE</a>." with a link to the source.
             </p>
         </div>
@@ -99,4 +117,3 @@
 </body>
 
 </html>
-
