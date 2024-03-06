@@ -1,12 +1,12 @@
 <?php
 /**
- * Title of the exercise
+ *  while exercise
  *
- * Short explanation of the task
+ * display the list by using while loop
  *
  * Author:    Sae Inoue <20103543@tafe.wa.eud.au>
  * Version:   1.0
- * Completed: 2024-02-20
+ * Completed: 2024-02-22
  */
 ?>
 <!DOCTYPE html>
@@ -23,19 +23,28 @@
 <header class="bg-amber-950 text-pink-400 p-4">
     <div class="container mx-auto flex flex-row gap-8">
         <h1 class="text-3xl font-semibold grow">YOUR NAME GOES HERE</h1>
-        <p class="text-3xl font-semibold">Session 03, Exercise XX</p>
+        <p class="text-3xl font-semibold">Session 03, Exercise 03</p>
     </div>
 </header>
 <main class="container mx-auto p-4 mt-6 flex flex-col gap-12 ">
 
     <article class="bg-white rounded-lg shadow-md shadow-gray-500/20 p-6">
         <header>
-            <h3 class="text-2xl font-semibold mb-4">Section Title</h3>
+            <h3 class="text-2xl font-semibold mb-4">Phonetic list </h3>
         </header>
         <section>
-            <p>OUTPUT GOES HERE - YOU SHOULD REMOVE UNWANTED COMPONENTS OF THE PAGE</p>
-            <p>For example remove this second article.</p>
-            <p>Update the header and the footer as required.</p>
+            <?php
+            $alphabet = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel', 'India',
+                'Juliet', 'Kilo', 'Lima', 'Mike', 'November', 'Oscar', 'Papa', 'Quebec', 'Romeo', 'Sierra',
+                'Tango', 'Uniform', 'Victor', 'Whiskey', 'Xray', 'Yankie', 'Zulu'];
+
+            $i = 0;
+            while($i < count($alphabet)){
+                echo '<pre>'. $i+1 .'. '. $alphabet[$i] . '<br>'.'</pre>';
+                $i++;
+            }
+
+            ?>
         </section>
     </article>
     <article class="bg-white rounded-lg shadow-md shadow-gray-500/20 p-6">

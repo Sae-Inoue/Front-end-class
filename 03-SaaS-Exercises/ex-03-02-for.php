@@ -1,12 +1,12 @@
 <?php
 /**
- * Title of the exercise
+ * for loop exercise
  *
- * Short explanation of the task
+ * Write a for loop that displays an unordered list
  *
  * Author:    Sae Inoue <20103543@tafe.wa.eud.au>
  * Version:   1.0
- * Completed: 2024-02-20
+ * Completed: 2024-02-22
  */
 ?>
 <!DOCTYPE html>
@@ -23,19 +23,24 @@
 <header class="bg-amber-950 text-pink-400 p-4">
     <div class="container mx-auto flex flex-row gap-8">
         <h1 class="text-3xl font-semibold grow">YOUR NAME GOES HERE</h1>
-        <p class="text-3xl font-semibold">Session 03, Exercise XX</p>
+        <p class="text-3xl font-semibold">Session 03, Exercise 02</p>
     </div>
 </header>
 <main class="container mx-auto p-4 mt-6 flex flex-col gap-12 ">
 
     <article class="bg-white rounded-lg shadow-md shadow-gray-500/20 p-6">
         <header>
-            <h3 class="text-2xl font-semibold mb-4">Section Title</h3>
+            <h3 class="text-2xl font-semibold mb-4">Users Table</h3>
         </header>
         <section>
-            <p>OUTPUT GOES HERE - YOU SHOULD REMOVE UNWANTED COMPONENTS OF THE PAGE</p>
-            <p>For example remove this second article.</p>
-            <p>Update the header and the footer as required.</p>
+
+            <?php
+            $number = 10;
+                for($i = 0;$i <= $number; $i++){
+                    echo '<pre>'. 'User ' . $i .' :' .'<br>'.'</pre>';
+                }
+            ?>
+
         </section>
     </article>
     <article class="bg-white rounded-lg shadow-md shadow-gray-500/20 p-6">
