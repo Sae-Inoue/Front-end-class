@@ -2,23 +2,33 @@
 /**
  * Session 04 - Practice Exercise 5
  *
- * Problem Description
+ * Divisible by 5
  *
- * Author:      Student Name <student email>
- * Version:     0.0
+ * Author:      Sae Inoue <20103543@tafe.wa.edu.au>
+ * Version:     1.0
  *
- * Within this file you will find a number of TO DO statements
- * that will describe what needs to be completed in this exercise.
  *
  * Follow the instructions carefully.
  *
  */
 
-// TODO: Create a function that returns true if an integer is
-//       evenly divisible by 5, and false otherwise.
 
-// TODO: Create a variable for the value to be tested
-// TODO: Create a variable that holds the result of the test
+function DivisibleByFive($number){
+    if($number % 5 === 0){
+        return True;
+    }else{
+        return False;
+    }
+}
+
+
+$number1 = 5;
+$number2 = -55;
+$number3 = 37;
+
+$result = DivisibleByFive($number1);
+$result2 = DivisibleByFive($number2);
+$result3 = DivisibleByFive($number3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,31 +36,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- TODO: Make the title: Session 04 -->
-    <title>TITLE GOES HERE</title>
+    <title>Session 04</title>
 </head>
 
 <body class="bg-gray-100 flex flex-col min-h-screen">
 <header class="bg-gray-800 text-white p-4">
     <div class="container mx-auto flex flex-row justify-between">
-        <h1 class="text-3xl font-semibold">YOUR NAME GOES HERE</h1>
-        <!-- TODO: Make the Topic "Exercise 05" -->
-        <h2 class="text-2xl">TOPIC: Subtopic</h2>
+        <h1 class="text-3xl font-semibold">Sae Inoue</h1>
+        <h2 class="text-2xl">TOPIC: Exercise 05</h2>
     </div>
 </header>
 <main class="container mx-auto p-4 mt-4 gap-4 flex flex-col">
     <article class="bg-white rounded-lg shadow-md shadow-gray-500/20 p-6">
         <header>
-        <!-- TODO: Make the heading "Divisible by 5" -->
-            <h2 class="text-2xl font-semibold mb-4">OUTPUT HEADING</h2>
+            <h2 class="text-2xl font-semibold mb-4">Divisible by 5</h2>
         </header>
         <section>
             <?php
-            // TODO: Using a suitable method to output the starting value
-            //       followed by the result in the form shown in plain HTML below
+            if($result === True){
+                echo  $number1. ' is divisible by 5';
+            }else{
+                echo $number1. ' is not divisible by 5';
+            }
+
+            echo '<br>';
+            if($result2 === True){
+                echo  $number2. ' is divisible by 5';
+            }else{
+                echo $number2. ' is not divisible by 5';
+            }
+
+            echo '<br>';
+            if($result3 === True){
+                echo  $number3. ' is divisible by 5';
+            }else{
+                echo $number3. ' is not divisible by 5';
+            }
             ?>
-            <p>-55 is divisible by 5.</p>
-            <p>52 is not divisible by 5.</p>
         </section>
     </article>
 
@@ -59,7 +81,7 @@
     <section class="container mx-auto flex flex-row flex-wrap justify-between">
         <div class="w-1/2">
             <p>
-                &copy; Copyright 2024 YOUR NAME HERE, All rights Reserved
+                &copy; Copyright 2024 Sae Inoue, All rights Reserved
             </p>
         </div>
         <div class="w-1/2">
@@ -72,17 +94,5 @@
         </div>
     </section>
 </body>
-<!-- TODO: Test your solution with the values below:
-                divisibleByFive(5) ➞ true
-                divisibleByFive(-55) ➞ true
-                divisibleByFive(37) ➞ false
- -->
-<!-- TODO: Resolve any errors, if they exist. -->
-<!-- TODO: Remove the comment from the top of the document that starts
-            * Within this file you ...
-           and ends with
-            * and save your work.
--->
-<!-- TODO: Update the version to 1.0 -->
-<!-- TODO: Finally remove all TODO comments from the code. -->
+
 </html>
