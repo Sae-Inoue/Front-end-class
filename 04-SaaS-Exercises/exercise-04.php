@@ -16,16 +16,42 @@
 
 // TODO: Create a function that converts meters per second to kilometers per hour
 
-// TODO: Create a function that converts meters per second to kilometers per hour
+function ConvertMToKm($metersPerSec){
+    return $metersPerSec * 3600 / 1000;
+}
 
-// TODO: Create a variable called metersPerSec with a value of 10.2
+function ConvertKmToM($kilometersPerHour){
+    return $kilometersPerHour * 1000 / 3600;
+}
 
-// TODO: Create a variable called kilometersPerHour with a value of 65.3
+$metersPerSec = 10.2;
+$kilometersPerHour = 65.3;
 
-// TODO: Create a variable mps2kph and assign it the result of the relevant function
+$metersPerSec1 = 0;
+$kilometersPerHour1 = 0;
 
-// TODO: Create a variable kph2mps and assign it the result of the relevant function
+$metersPerSec2 = 1;
+$kilometersPerHour2 = 3.6;
 
+$metersPerSec3 = 30.55;
+$kilometersPerHour3 = 110;
+//TODO: Test your solution with the values below:
+//            Test 1: 0m/s = 0km/h, 0km/h = 0m/s
+//            Test 2: 1m/s = 3.6km/h, 3.6kph = 1m/s
+//            Test 3: 30.55m/s = 109.98km/h, 110km/h = 30.56m/s
+
+
+$mps2kph = ConvertMToKm($metersPerSec);
+$kph2mps = ConvertKmToM($kilometersPerHour);
+
+$mps2kph1 = ConvertMToKm($metersPerSec1);
+$kph2mps1 = ConvertKmToM($kilometersPerHour1);
+
+$mps2kph2 = ConvertMToKm($metersPerSec2);
+$kph2mps2 = ConvertKmToM($kilometersPerHour2);
+
+$mps2kph3 = ConvertMToKm($metersPerSec3);
+$kph2mps3 = ConvertKmToM($kilometersPerHour3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,31 +59,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- TODO: Make the title: Session 04 -->
-    <title>TITLE GOES HERE</title>
+    <title>Session 04</title>
 </head>
 
 <body class="bg-gray-100 flex flex-col min-h-screen">
 <header class="bg-gray-800 text-white p-4">
     <div class="container mx-auto flex flex-row justify-between">
-        <h1 class="text-3xl font-semibold">YOUR NAME GOES HERE</h1>
-        <!-- TODO: Make the Topic "Exercise 02" -->
-        <h2 class="text-2xl">TOPIC: Subtopic</h2>
+        <h1 class="text-3xl font-semibold">Sae Inoue</h1>
+        <h2 class="text-2xl">TOPIC: Exercise 04</h2>
     </div>
 </header>
 <main class="container mx-auto p-4 mt-4 gap-4 flex flex-col">
     <article class="bg-white rounded-lg shadow-md shadow-gray-500/20 p-6">
         <header>
-        <!-- TODO: Make the heading "Velocity Conversion" -->
-            <h2 class="text-2xl font-semibold mb-4">OUTPUT HEADING</h2>
+            <h2 class="text-2xl font-semibold mb-4">Velocity Conversion</h2>
         </header>
         <section>
             <?php
-            // TODO: Using a suitable method to output the starting value
-            //       followed by the result in the form shown in plain HTML below
+
+            echo '<p>'. $metersPerSec.'m/s is '.$mps2kph .' km/h</p>';
+            echo '<p>'. $kilometersPerHour.'km/h is '.$kph2mps .' m/s</p>';
+
+            echo '<p>'. $metersPerSec1.'m/s is '.$mps2kph1 .' km/h</p>';
+            echo '<p>'. $kilometersPerHour1.'km/h is '.$kph2mps1 .' m/s</p>';
+
+            echo '<p>'. $metersPerSec2.'m/s is '.$mps2kph2 .' km/h</p>';
+            echo '<p>'. $kilometersPerHour2.'km/h is '.$kph2mps2 .' m/s</p>';
+
+            echo '<p>'. $metersPerSec3.'m/s is '.$mps2kph3 .' km/h</p>';
+            echo '<p>'. $kilometersPerHour3.'km/h is '.$kph2mps3 .' m/s</p>';
             ?>
-            <p>9.0 m/s is 342.5 km/h</p>
-            <p>19.0 km/h is 31.0 m/s</p>
+
         </section>
     </article>
 
@@ -79,17 +111,6 @@
         </div>
     </section>
 </body>
-<!-- TODO: Test your solution with the values below:
-            Test 1: 0m/s = 0km/h, 0km/h = 0m/s
-            Test 2: 1m/s = 3.6km/h, 3.6kph = 1m/s
-            Test 3: 30.55m/s = 109.98km/h, 110km/h = 30.56m/s
- -->
-<!-- TODO: Resolve any errors, if they exist. -->
-<!-- TODO: Remove the comment from the top of the document that starts
-            * Within this file you ...
-           and ends with
-            * and save your work.
--->
-<!-- TODO: Update the version to 1.0 -->
-<!-- TODO: Finally remove all TODO comments from the code. -->
+
+
 </html>
