@@ -26,10 +26,12 @@
 function ShortChanged($change){
 
     $notes = [100,50,20,10,5];
-    $coins = [2,1,is_float(0.5),is_float(0.2),is_float(0.1),is_float(0.05)];
+    $coins = [2,1,0.5,0.2,0.1,0.05];
     $countNote = array();
     $countCoin = array();
+    $total = array();
 
+    //Notes
     foreach($notes as $note){
         if($change >= $note){
             $restNote = floor($change / $note) ;
@@ -40,8 +42,19 @@ function ShortChanged($change){
         }
     }
 
+
+
+    foreach($notes as $index => $value){
+        if ($countNote[$index] != 0) {
+            //Create the associative array noteBox and assign the key and value
+            $notesBox["$".$value] = $countNote[$index];
+            $total[$index] =  $notesBox["$".$value].'x'.'$'.$value;
+        }
+    }
+
+    //Coins
     foreach($coins as $coin){
-        if($change >= $coin){
+        if($change >= $coin or $change == $coin){
             $restCoin = floor($change / $coin) ;
             $change = $change - $restCoin * $coin;
             $countCoin[] = $restCoin;
@@ -49,18 +62,56 @@ function ShortChanged($change){
             $countCoin[] = 0;
         }
     }
+    //print_r($countCoin);
 
-    var_dump($countNote);
-    var_dump($countCoin);
+    foreach($coins as $index => $value){
+        if ($countCoin[$index] != 0 and $index < 2 ) {
+            $coinsBox["$".$value] = $countCoin[$index];
+            $total[$index] = $coinsBox["$".$value].'x'.'$'.$value;
+        }elseif($countCoin[$index] != 0 and 1 < $index and $index < 5){
+            $coinsBox[$value.'c'] = $countCoin[$index];
+            $total[$index] = $coinsBox[$value.'c'].'x'.$value * 10 .'c';
+        }elseif($countCoin[$index] != 0 and $index === 5) {
+            $coinsBox[$value . 'c'] = $countCoin[$index];
+            $total[$index] = $coinsBox[$value . 'c'] . 'x' . $value * 100 . 'c';
+        }
+    }
+
+
+    foreach ($total as $index =>$value){
+        echo $value . ', ';
+    }
+
+
+
+//    if($countNote[0] != 0){
+//        $notesBox['$100'] = $countNote[0];
+//        echo $notesBox['$100'].'x'.'$100<br>';
+//    }
+//    if($countNote[1] != 0){
+//        $notesBox['$50'] = $countNote[1];
+//        echo $notesBox['$50'].'x'.'$50<br>';
+//    }
+//    if($countNote[2] != 0){
+//        $notesBox['$20'] = $countNote[2];
+//        echo $notesBox['$20'].'x'.'$20<br>';
+//    }
+//    if($countNote[3] != 0){
+//        $notesBox['$10'] = $countNote[3];
+//        echo $notesBox['$10'].'x'.'$10<br>';
+//    }
+//    if($countNote[4] != 0){
+//        $notesBox['$5'] = $countNote[4];
+//        echo $notesBox['$5'].'x'.'$5<br>';
+//    }
+
 }
 
 
+$change = 3.25 ;
 
 
-$change = 32;
-$result = ShortChanged($change);
 
-echo $result;
 
 ?>
 <!DOCTYPE html>
@@ -88,7 +139,8 @@ echo $result;
             <?php
             // TODO: Using a suitable method to output the starting value
             //       followed by the result in the form shown in plain HTML below
-            echo 'For change of'. $change . ' hand the customer';
+            echo 'For change of $'. $change . ' hand the customer ';
+            ShortChanged($change);
             ?>
             <p>For change of $32 hand the customer 1×$20, 1×$10, 1×$2  </p>
             <p>For change of $3.24 hand the customer 1×$2, 1×$1, 1×20c, 1x5c  </p>
