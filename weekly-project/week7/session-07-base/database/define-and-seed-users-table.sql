@@ -1,14 +1,13 @@
 -- Filename: define-and-seed-users-table.sql
 
 -- Direct the script to use the database
-USE
-    INITIALS_saas_fed;
+USE si_saas_fed;
 
 -- Define Users Table (Note tables are PLURALISED)
-DROP TABLE IF EXISTS INITIALS_saas_fed.users;
-CREATE TABLE INITIALS_saas_fed.users
+DROP TABLE IF EXISTS si_saas_fed.users;
+CREATE TABLE si_saas_fed.users
 (
-    id          BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    id          BIGINT UNsiGNED NOT NULL AUTO_INCREMENT,
     given_name  varchar(192)    NOT NULL,
     family_name varchar(192)    NULL,
     photo       varchar(255)    NULL DEFAULT "avatar.png",
@@ -38,5 +37,5 @@ VALUES
        ('Cole', 'Slaw', 'Cole.Slaw@example.com', "Password1", 'Cole.png'),
        ('Daisy', 'Chain', 'Daisy.Chain@example.com', "Password1", 'Daisy.png'),
        ('Dusty', 'Rhodes', 'Dusty.Rhodes@example.com', "Password1", 'Dusty.png'),
-       ('Dan', 'Singh', 'Dan.Singh@example.com', "Password1", 'Dan.png')
+       ('Dan', 'singh', 'Dan.singh@example.com', "Password1", 'Dan.png')
 ;

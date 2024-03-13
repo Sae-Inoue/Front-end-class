@@ -1,31 +1,7 @@
 <?php
 $title = "Session 07 Retrieve";
 
-// Define database configuration
-define('DB_TYPE', 'mysql');
-const DB_HOST = '127.0.0.1';
-const DB_PORT = 3306;
-const DB_NAME = 'INITIALS_saas_fed';
-const DB_USER = 'INITIALS_saas_fed';
-const DB_PASS = 'Password1';
-
-// Create database connection (Database Source Name)
-$dsn = DB_TYPE.':host='.DB_HOST.';port='.DB_PORT.
-    ";dbname=".DB_NAME.';charset=utf8;';
-
-try {
-    $pdo = new PDO($dsn, DB_USER, DB_PASS);
-    // Error mode will be exception based
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // Retrieve data as associative array
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $message = "Connected to DB";
-} catch (PDOException $error) {
-    echo "<h2>ERROR</h2>";
-    echo "<p>Database Connection Issue: {$error->getMessage()}</p>";
-    die();
-}
-
+include_once "database.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -52,11 +28,20 @@ try {
 
 <main class="container mx-auto p-4 mt-6 flex flex-col gap-4 my-12">
 
-        <section class="bg-green-200 rounded-lg shadow-sm shadow-black/30 p-2">
-            <?php
-            echo "<p>$message</p>";
+    <?php
+    if(isset($messages)){
+        foreach ($messages as $key=>$message){
+
             ?>
-        </section>
+            <section class="bg-green-200 rounded-lg shadow-sm shadow-black/30 p-2">
+                <?php
+                echo "<p>{$message}</p>";
+                ?>
+            </section>
+            <?php
+        } //end foreach
+    }  // end if
+    ?>
 
     <article class="bg-white rounded-lg shadow-md shadow-black/30 p-6">
         <header>
@@ -75,7 +60,7 @@ try {
                     $results = $statement->fetchAll();
 
                     foreach ($results as $user) {
-                        ?>
+                ?>
                         <section class="w-1/5 rounded shadow shadow-black/30">
                             <div class="bg-black text-gray p-2 m-0 rounded-t flex flex-row justify-between">
                                 <h4 class="text-gray-200 font-semibold ">
@@ -102,7 +87,7 @@ try {
                             </p>
                             <p class="mx-auto w-auto px-2 pb-2"><?= $user['email'] ?></p>
                         </section>
-                        <?php
+                <?php
                     }
                 }
                 ?>

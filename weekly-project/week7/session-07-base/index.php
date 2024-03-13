@@ -1,6 +1,7 @@
 <?php
 $title = "Session 07 Index";
 include_once "database.php";
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -27,11 +28,20 @@ include_once "database.php";
 </header>
 
 <main class="container mx-auto p-4 mt-6 flex flex-col gap-4 my-12">
+    <?php
+    if(isset($messages)){
+        foreach ($messages as $key=>$message){
+
+    ?>
     <section class="bg-green-200 rounded-lg shadow-sm shadow-black/30 p-2">
         <?php
         echo "<p>{$message}</p>";
         ?>
     </section>
+    <?php
+       } //end foreach
+     }  // end if
+    ?>
 
     <article class="bg-white rounded-lg shadow-md shadow-black/30 p-6">
         <header>

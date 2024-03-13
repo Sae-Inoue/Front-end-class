@@ -3,8 +3,8 @@
 define('DB_TYPE', 'mysql');
 const DB_HOST = '127.0.0.1';
 const DB_PORT = 3306;
-const DB_NAME = 'INITIALS_saas_fed';
-const DB_USER = 'INITIALS_saas_fed';
+const DB_NAME = 'si_saas_fed';
+const DB_USER = 'si_saas_fed';
 const DB_PASS = 'Password1';
 
 // Create database connection (Database Source Name)
