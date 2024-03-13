@@ -12,32 +12,7 @@
 
 
 
-echo "<table>";
-echo "<thead>";
-echo "<tr>";
-echo "<th>Person</th>";
-echo "<th>Salary</th>";
-echo "</tr>";
-echo "</thead>";
-echo "</table>";
-echo "<tbody>";
-echo "<tr>";
-echo "<td>James Joyce</td>";
-echo "<td>$1000</td>";
-echo "</tr>";
-echo "</tbody>";
-echo "<tbody>";
-echo "<tr>";
-echo "<td>Issac Newton</td>";
-echo "<td>$2300</td>";
-echo "</tr>";
-echo "</tbody>";
-echo "<tbody>";
-echo "<tr>";
-echo "<td>Mary Shelly</td>";
-echo "<td>$3500</td>";
-echo "</tr>";
-echo "</tbody>";
+
 
 
 ?>
@@ -48,7 +23,7 @@ echo "</tbody>";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Use SCRIPT as we are using the Tailwind CDN for now -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Session 03 Exercises</title>
+    <title>Session 03 Exercises 01</title>
 </head>
 
 <body class="bg-gray-100 flex flex-col min-h-screen">
@@ -62,12 +37,37 @@ echo "</tbody>";
 
     <article class="bg-white rounded-lg shadow-md shadow-gray-500/20 p-6">
         <header>
-            <h3 class="text-2xl font-semibold mb-4">Section Title</h3>
+            <h3 class="text-2xl font-semibold mb-4">Salaries Table</h3>
         </header>
         <section>
-            <p>OUTPUT GOES HERE - YOU SHOULD REMOVE UNWANTED COMPONENTS OF THE PAGE</p>
-            <p>For example remove this second article.</p>
-            <p>Update the header and the footer as required.</p>
+            <?php
+            echo "<table class='table border text-center'>";
+            echo "<thead class='bg-gray-800 text-white'>";
+            echo "<tr>";
+            echo "<th class='p-2'>Person</th>";
+            echo "<th class='p-2'>Salary</th>";
+            echo "</tr>";
+            echo "</thead>";
+
+            echo "<tbody>";
+
+            echo "<tr>";
+            echo "<td>James Joyce</td>";
+            echo "<td>$1000</td>";
+            echo "</tr>";
+
+            echo "<tr>";
+            echo "<td>Issac Newton</td>";
+            echo "<td>$2300</td>";
+            echo "</tr>";
+
+            echo "<tr>";
+            echo "<td>Mary Shelly</td>";
+            echo "<td>$3500</td>";
+            echo "</tr>";
+            echo "</tbody>";
+            echo "</table>";
+            ?>
         </section>
     </article>
     <article class="bg-white rounded-lg shadow-md shadow-gray-500/20 p-6">

@@ -2,13 +2,11 @@
 /**
  * Session 04 - Practice Exercise 6
  *
- * Problem Description
+ * Short Changed
  *
- * Author:      Student Name <student email>
- * Version:     0.0
+ * Author:      Sae Inoue <20103543@tafe.wa.edu.au>
+ * Version:     1.0
  *
- * Within this file you will find a number of TO DO statements
- * that will describe what needs to be completed in this exercise.
  *
  * Follow the instructions carefully.
  *
@@ -25,6 +23,96 @@
 //       $100, $50, $20, $10, $5 (notes) and
 //       $2, $1, 50c, 20c, 10c and 5c (coins)
 
+function ShortChanged($change){
+
+    $notes = [100,50,20,10,5];
+    $coins = [2,1,0.5,0.2,0.1,0.05];
+    $countNote = array();
+    $countCoin = array();
+    $total = array();
+
+    //Notes
+    foreach($notes as $note){
+        if($change >= $note){
+            $restNote = floor($change / $note) ;
+            $change = $change - $restNote * $note;
+            $countNote[] = $restNote;
+        }else{
+            $countNote[] = 0;
+        }
+    }
+
+
+
+    foreach($notes as $index => $value){
+        if ($countNote[$index] != 0) {
+            //Create the associative array noteBox and assign the key and value
+            $notesBox["$".$value] = $countNote[$index];
+            $total[$index] =  $notesBox["$".$value].'x'.'$'.$value;
+        }
+    }
+
+    //Coins
+    foreach($coins as $coin){
+        if($change >= $coin or $change == $coin){
+            $restCoin = floor($change / $coin) ;
+            $change = $change - $restCoin * $coin;
+            $countCoin[] = $restCoin;
+        }else{
+            $countCoin[] = 0;
+        }
+    }
+    //print_r($countCoin);
+
+    foreach($coins as $index => $value){
+        if ($countCoin[$index] != 0 and $index < 2 ) {
+            $coinsBox["$".$value] = $countCoin[$index];
+            $total[$index] = $coinsBox["$".$value].'x'.'$'.$value;
+        }elseif($countCoin[$index] != 0 and 1 < $index and $index < 5){
+            $coinsBox[$value.'c'] = $countCoin[$index];
+            $total[$index] = $coinsBox[$value.'c'].'x'.$value * 10 .'c';
+        }elseif($countCoin[$index] != 0 and $index === 5) {
+            $coinsBox[$value . 'c'] = $countCoin[$index];
+            $total[$index] = $coinsBox[$value . 'c'] . 'x' . $value * 100 . 'c';
+        }
+    }
+
+
+    foreach ($total as $index =>$value){
+        echo $value . ', ';
+    }
+
+
+
+//    if($countNote[0] != 0){
+//        $notesBox['$100'] = $countNote[0];
+//        echo $notesBox['$100'].'x'.'$100<br>';
+//    }
+//    if($countNote[1] != 0){
+//        $notesBox['$50'] = $countNote[1];
+//        echo $notesBox['$50'].'x'.'$50<br>';
+//    }
+//    if($countNote[2] != 0){
+//        $notesBox['$20'] = $countNote[2];
+//        echo $notesBox['$20'].'x'.'$20<br>';
+//    }
+//    if($countNote[3] != 0){
+//        $notesBox['$10'] = $countNote[3];
+//        echo $notesBox['$10'].'x'.'$10<br>';
+//    }
+//    if($countNote[4] != 0){
+//        $notesBox['$5'] = $countNote[4];
+//        echo $notesBox['$5'].'x'.'$5<br>';
+//    }
+
+}
+
+
+$change = 3.25 ;
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,28 +120,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- TODO: Make the title: Session 04 -->
-    <title>TITLE GOES HERE</title>
+    <title> Session 04</title>
 </head>
 
 <body class="bg-gray-100 flex flex-col min-h-screen">
 <header class="bg-gray-800 text-white p-4">
     <div class="container mx-auto flex flex-row justify-between">
-        <h1 class="text-3xl font-semibold">YOUR NAME GOES HERE</h1>
-        <!-- TODO: Make the Topic "Exercise 06" -->
-        <h2 class="text-2xl">TOPIC: Subtopic</h2>
+        <h1 class="text-3xl font-semibold">Sae Inoue</h1>
+        <h2 class="text-2xl">TOPIC: Exercise 06</h2>
     </div>
 </header>
 <main class="container mx-auto p-4 mt-4 gap-4 flex flex-col">
     <article class="bg-white rounded-lg shadow-md shadow-gray-500/20 p-6">
         <header>
-        <!-- TODO: Make the heading "Short Changed" -->
-            <h2 class="text-2xl font-semibold mb-4">OUTPUT HEADING</h2>
+            <h2 class="text-2xl font-semibold mb-4">Short Changed</h2>
         </header>
         <section>
             <?php
             // TODO: Using a suitable method to output the starting value
             //       followed by the result in the form shown in plain HTML below
+            echo 'For change of $'. $change . ' hand the customer ';
+            ShortChanged($change);
             ?>
             <p>For change of $32 hand the customer 1×$20, 1×$10, 1×$2  </p>
             <p>For change of $3.24 hand the customer 1×$2, 1×$1, 1×20c, 1x5c  </p>
